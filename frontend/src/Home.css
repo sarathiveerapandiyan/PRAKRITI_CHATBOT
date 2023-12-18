@@ -1,0 +1,121 @@
+/* Home.css */
+
+body {
+  margin: 0;
+  font-family: 'Helvetica Neue', sans-serif;
+  background-color: #ffffff; /* White background */
+  color: #000000; /* Black text color */
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.app-header {
+  background-color: #001f3f; /* Dark navy blue header */
+  padding: 10px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.brand {
+  font-size: 24px;
+  color: #ffffff; /* White brand text color */
+}
+
+.app-content {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 20px;
+  background-color: #ffffff; /* White content background */
+}
+
+.chat-box-container {
+  overflow-y: auto;
+}
+
+.chat-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.user,
+.bot {
+  max-width: 70%;
+  border-radius: 8px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.user {
+  align-self: flex-end;
+  background-color: #ffffff; /* White user background */
+  color: #000000; /* Black user text color */
+}
+
+.bot {
+  align-self: flex-start;
+  background-color: #001f3f; /* Dark navy blue bot background */
+  color: #ffffff; /* White bot text color */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.app-input {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #ffffff; /* White input background */
+  border-top: 1px solid #ccc;
+}
+
+input {
+  flex-grow: 1;
+  padding: 10px;
+  margin-right: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #001f3f; /* Dark navy blue button background */
+  color: #ffffff; /* White button text color */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.bot .loading-animation {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: #001f3f; /* Dark navy blue dot color */
+  border-radius: 50%;
+  animation: loading-animation 1s infinite;
+  margin-left: 8px;
+}
+.bot .typing-animation::after {
+  content: "|";
+  animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+  50% {
+    border-color: transparent;
+  }
+}
